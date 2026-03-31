@@ -59,14 +59,14 @@ export default function News() {
         </motion.div>
 
         <div className="mb-12">
-          <Link href={`/stiri/${featuredArticle.slug}`}>
+          <Link href={`/stiri/${typeof featuredArticle.slug === 'string' ? featuredArticle.slug : featuredArticle.slug.current}`}>
             <ArticleCard article={featuredArticle} index={0} featured />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {regularArticles.map((article, index) => (
-            <Link key={index} href={`/stiri/${article.slug}`}>
+            <Link key={index} href={`/stiri/${typeof article.slug === 'string' ? article.slug : article.slug.current}`}>
               <ArticleCard article={article} index={index + 1} />
             </Link>
           ))}

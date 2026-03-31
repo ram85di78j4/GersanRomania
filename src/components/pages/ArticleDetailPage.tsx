@@ -52,10 +52,10 @@ export default function ArticleDetailPage({ article }: ArticleDetailPageProps) {
             </motion.div>
 
             {/* Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight">
-              <GlowText className="bg-gradient-to-r from-white via-pink-200 to-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight max-w-3xl">
+              <span className="bg-gradient-to-r from-white via-pink-200 to-white bg-clip-text text-transparent">
                 {article.title}
-              </GlowText>
+              </span>
             </h1>
 
             {/* Excerpt */}

@@ -51,10 +51,10 @@ export default function ProjectDetailPage({ project }: ProjectDetailPageProps) {
               </div>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight">
-              <GlowText className="bg-gradient-to-r from-white via-purple-200 to-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight max-w-2xl">
+              <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
                 {project.title}
-              </GlowText>
+              </span>
             </h1>
 
             <p className="text-lg text-white/70 mb-8 leading-relaxed">
