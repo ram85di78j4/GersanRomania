@@ -1,14 +1,13 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Zap, Play, ChevronDown } from 'lucide-react';
+import { Zap, ChevronDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
-import Button from '@/components/ui/Button';
 import GlowText from '@/components/ui/GlowText';
 import AnimatedBackground from '@/components/ui/AnimatedBackground';
 
-const EnhancedScene = dynamic(() => import('@/components/3d/EnhancedScene'), {
+const LightingScene = dynamic(() => import('@/components/3d/LightingScene'), {
   ssr: false,
   loading: () => (
     <div className="absolute inset-0 flex items-center justify-center">
@@ -48,7 +47,7 @@ export default function Hero() {
       <AnimatedBackground />
       
       <div className="absolute inset-0 opacity-30 sm:opacity-40">
-        <EnhancedScene />
+        <LightingScene />
       </div>
 
       <motion.div 
@@ -130,66 +129,16 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-7 sm:mb-9 md:mb-11 max-w-4xl mx-auto leading-relaxed font-light px-4 sm:px-0"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto leading-relaxed font-light px-4 sm:px-0"
           >
             Proiectăm și implementăm sisteme integrate de iluminat LED, automatizare inteligentă și infrastructură de încărcare EV. Soluții complete de la concept la execuție.
-            <span className="block mt-4 sm:mt-3 text-sm sm:text-base md:text-lg lg:text-xl text-cyan-400/90 font-normal">Design premium • Control inteligent • Eficiență maximă</span>
+            <span className="block mt-4 sm:mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-cyan-400/90 font-normal">Design premium • Control inteligent • Eficiență maximă</span>
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 md:gap-5 mb-10 sm:mb-14 md:mb-18 max-w-md sm:max-w-none mx-auto px-6 sm:px-0"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
-            >
-              <Button 
-                variant="primary" 
-                size="lg" 
-                glow 
-                className="group w-full sm:w-auto min-w-[200px] shadow-xl shadow-cyan-500/20"
-                onClick={() => {
-                  const contactSection = document.querySelector('#contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                <span className="relative z-10 font-bold">Începe Proiectul</span>
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </motion.div>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto"
-            >
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="group w-full sm:w-auto min-w-[200px] shadow-lg"
-                onClick={() => {
-                  const projectsSection = document.querySelector('#projects');
-                  if (projectsSection) {
-                    projectsSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" />
-                <span className="font-semibold">Vezi Demo</span>
-              </Button>
-            </motion.div>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2 }}
+            transition={{ duration: 1, delay: 1 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5 md:gap-6 lg:gap-8 max-w-5xl mx-auto px-6 sm:px-4 md:px-0"
           >
             {[
@@ -201,7 +150,7 @@ export default function Hero() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="relative group"
               >
