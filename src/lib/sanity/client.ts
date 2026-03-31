@@ -1,33 +1,159 @@
 // Sanity client setup
-// This file will be used once Sanity project is configured
-
-import { sanityConfig } from './config';
-
-// Sanity CMS client (currently disabled)
-// The site uses static data. Uncomment below when ready to integrate Sanity CMS:
-/*
 import { createClient } from '@sanity/client';
+import imageUrlBuilder from '@sanity/image-url';
+import { sanityConfig, groqFragments } from './config';
+import type { Project, Article } from '@/types/content';
+import { placeholderProjects as projects } from '@/data/placeholder/projects';
+import { placeholderArticles as articles } from '@/data/placeholder/articles';
 
-export const sanityClient = createClient({
+// Check if Sanity is configured
+const isSanityConfigured = () => {
+  return !!sanityConfig.projectId && sanityConfig.projectId !== '';
+};
+
+// Create Sanity client only if configured
+export const sanityClient = isSanityConfigured() ? createClient({
   projectId: sanityConfig.projectId,
   dataset: sanityConfig.dataset,
   apiVersion: sanityConfig.apiVersion,
   useCdn: sanityConfig.useCdn,
-});
-*/
+}) : null;
+
+// Image URL builder
+export function urlFor(source: any) {
+  if (!sanityClient) {
+    throw new Error('Sanity client is not configured');
+  }
+  const builder = imageUrlBuilder(sanityClient);
+  return builder.image(source);
+}
 
 // Helper function to fetch data
-// Currently returns empty array - replace with Sanity client when CMS is integrated
 export async function fetchContent<T>(query: string): Promise<T[]> {
-  // When Sanity is configured, uncomment:
-  // return sanityClient.fetch<T[]>(query);
-  return [] as T[];
+  if (!isSanityConfigured() || !sanityClient) {
+    // Return empty array if Sanity is not configured
+    return [] as T[];
+  }
+  
+  try {
+    return await sanityClient.fetch<T[]>(query);
+  } catch (error) {
+    console.error('Error fetching content from Sanity:', error);
+    return [] as T[];
+  }
 }
 
 // Helper function to fetch single document
-// Currently returns null - replace with Sanity client when CMS is integrated
 export async function fetchDocument<T>(query: string): Promise<T | null> {
-  // When Sanity is configured, uncomment:
-  // return sanityClient.fetch<T>(query);
-  return null;
+  if (!isSanityConfigured() || !sanityClient) {
+    return null;
+  }
+  
+  try {
+    return await sanityClient.fetch<T>(query);
+  } catch (error) {
+    console.error('Error fetching document from Sanity:', error);
+    return null;
+  }
+}
+
+// Fetch all projects
+export async function getProjects(): Promise<Project[]> {
+  if (!isSanityConfigured()) {
+    // Return placeholder data if Sanity is not configured
+    return projects as unknown as Project[];
+  }
+  
+  const query = `*[_type == "project"] | order(publishedAt desc) {
+    ${groqFragments.project}
+  }`;
+  
+  return fetchContent<Project>(query);
+}
+
+// Fetch single project by slug
+export async function getProjectBySlug(slug: string): Promise<Project | null> {
+  if (!isSanityConfigured()) {
+    // Return placeholder data if Sanity is not configured
+    const project = projects.find(p => {
+      const projectSlug = typeof p.slug === 'string' ? p.slug : p.slug.current;
+      return projectSlug === slug;
+    });
+    return project ? (project as unknown as Project) : null;
+  }
+  
+  const query = `*[_type == "project" && slug.current == $slug][0] {
+    ${groqFragments.project},
+    content,
+    "gallery": gallery[]{
+      "url": asset->url,
+      "alt": alt
+    },
+    client,
+    category,
+    seo
+  }`;
+  
+  return fetchDocument<Project>(query);
+}
+
+// Fetch all articles
+export async function getArticles(): Promise<Article[]> {
+  if (!isSanityConfigured()) {
+    // Return placeholder data if Sanity is not configured
+    return articles as unknown as Article[];
+  }
+  
+  const query = `*[_type == "article"] | order(publishedAt desc) {
+    ${groqFragments.article}
+  }`;
+  
+  return fetchContent<Article>(query);
+}
+
+// Fetch single article by slug
+export async function getArticleBySlug(slug: string): Promise<Article | null> {
+  if (!isSanityConfigured()) {
+    // Return placeholder data if Sanity is not configured
+    const article = articles.find(a => {
+      const articleSlug = typeof a.slug === 'string' ? a.slug : a.slug.current;
+      return articleSlug === slug;
+    });
+    return article ? (article as unknown as Article) : null;
+  }
+  
+  const query = `*[_type == "article" && slug.current == $slug][0] {
+    ${groqFragments.article},
+    content,
+    tags,
+    seo
+  }`;
+  
+  return fetchDocument<Article>(query);
+}
+
+// Fetch featured projects
+export async function getFeaturedProjects(limit: number = 6): Promise<Project[]> {
+  if (!isSanityConfigured()) {
+    return projects.slice(0, limit) as unknown as Project[];
+  }
+  
+  const query = `*[_type == "project" && featured == true] | order(publishedAt desc) [0...${limit}] {
+    ${groqFragments.project}
+  }`;
+  
+  return fetchContent<Project>(query);
+}
+
+// Fetch featured articles
+export async function getFeaturedArticles(limit: number = 4): Promise<Article[]> {
+  if (!isSanityConfigured()) {
+    return articles.slice(0, limit) as unknown as Article[];
+  }
+  
+  const query = `*[_type == "article" && featured == true] | order(publishedAt desc) [0...${limit}] {
+    ${groqFragments.article}
+  }`;
+  
+  return fetchContent<Article>(query);
 }

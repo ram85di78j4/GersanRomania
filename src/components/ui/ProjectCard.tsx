@@ -1,29 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Zap, Calendar, MapPin } from 'lucide-react';
+import { MapPin, Calendar, Zap, ArrowRight, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import type { Project } from '@/types/content';
 
 interface ProjectCardProps {
-  project: {
-    title: string;
-    type: string;
-    location: string;
-    year: string;
-    image: string;
-    technologies: string[];
-    equipment: string[];
-    results: {
-      metric: string;
-      value: string;
-    }[];
-    description: string;
-    glowColor: 'cyan' | 'purple' | 'pink' | 'green';
-  };
-  index: number;
+  project: Project;
+  index?: number;
 }
 
-export default function ProjectCard({ project, index }: ProjectCardProps) {
+export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const glowColors = {
     cyan: 'group-hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]',
     purple: 'group-hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]',
@@ -70,8 +57,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <div className="relative h-80 overflow-hidden">
         <Image
-          src={project.image}
-          alt={project.title}
+          src={project.image.url}
+          alt={project.image.alt || project.title}
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />

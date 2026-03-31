@@ -1,74 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Newspaper, TrendingUp } from 'lucide-react';
+import { Sparkles, ArrowRight, Newspaper } from 'lucide-react';
+import Link from 'next/link';
 import Section from '@/components/ui/Section';
 import GlowText from '@/components/ui/GlowText';
-import Button from '@/components/ui/Button';
 import ArticleCard from '@/components/ui/ArticleCard';
-
-const articles = [
-  {
-    title: 'The Future of Intelligent Lighting: AI-Driven Adaptive Systems',
-    excerpt: 'Discover how artificial intelligence and machine learning are transforming LED lighting systems into intelligent networks that adapt to human behavior, optimize energy consumption, and create personalized lighting experiences in real-time.',
-    date: 'March 28, 2026',
-    category: 'Technology',
-    readTime: '6 min read',
-    author: 'Dr. Sarah Chen',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    categoryColor: 'cyan' as const,
-  },
-  {
-    title: 'EV Charging Infrastructure: 500+ Stations Deployed Nationwide',
-    excerpt: 'Our largest infrastructure rollout to date brings ultra-fast charging capabilities to major metropolitan areas, reducing charging times and supporting the electric vehicle revolution.',
-    date: 'March 25, 2026',
-    category: 'EV Charging',
-    readTime: '5 min read',
-    author: 'Michael Torres',
-    image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80',
-    categoryColor: 'green' as const,
-  },
-  {
-    title: 'Sustainable LED Solutions: Reducing Carbon Footprint by 70%',
-    excerpt: 'Case study on how modern LED technology is helping businesses achieve sustainability goals while improving lighting quality and reducing operational costs.',
-    date: 'March 22, 2026',
-    category: 'Sustainability',
-    readTime: '7 min read',
-    author: 'Emma Rodriguez',
-    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&q=80',
-    categoryColor: 'green' as const,
-  },
-  {
-    title: 'Smart Home Integration: Complete Setup Guide for 2026',
-    excerpt: 'Step-by-step walkthrough for integrating advanced LED lighting systems with popular home automation platforms including Alexa, Google Home, and Apple HomeKit.',
-    date: 'March 18, 2026',
-    category: 'Smart Home',
-    readTime: '8 min read',
-    author: 'James Park',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
-    categoryColor: 'purple' as const,
-  },
-  {
-    title: 'RGB Lighting Trends: From Retail to Residential Applications',
-    excerpt: 'Exploring the latest trends in dynamic RGB lighting and how businesses and homeowners are using color-changing LEDs to create immersive environments.',
-    date: 'March 15, 2026',
-    category: 'Design',
-    readTime: '5 min read',
-    author: 'Lisa Anderson',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
-    categoryColor: 'pink' as const,
-  },
-  {
-    title: 'Industrial Lighting Retrofit: 72% Energy Savings Case Study',
-    excerpt: 'Real-world results from a manufacturing facility that upgraded to high-efficiency LED systems, achieving dramatic energy reductions and improved workplace safety.',
-    date: 'March 12, 2026',
-    category: 'Industry',
-    readTime: '6 min read',
-    author: 'Robert Kim',
-    image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80',
-    categoryColor: 'cyan' as const,
-  },
-];
+import Button from '@/components/ui/Button';
+import { placeholderArticles as articles } from '@/data/placeholder/articles';
 
 export default function News() {
   const featuredArticle = articles[0];
@@ -120,12 +59,16 @@ export default function News() {
         </motion.div>
 
         <div className="mb-12">
-          <ArticleCard article={featuredArticle} index={0} featured />
+          <Link href={`/stiri/${featuredArticle.slug}`}>
+            <ArticleCard article={featuredArticle} index={0} featured />
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {regularArticles.map((article, index) => (
-            <ArticleCard key={index} article={article} index={index + 1} />
+            <Link key={index} href={`/stiri/${article.slug}`}>
+              <ArticleCard article={article} index={index + 1} />
+            </Link>
           ))}
         </div>
 
@@ -135,10 +78,12 @@ export default function News() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button variant="outline" size="lg" className="group">
-            <TrendingUp className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-            <span>Explore All Articles</span>
-          </Button>
+          <Link href="/stiri">
+            <Button variant="outline" size="lg" className="group">
+              <span>Vezi Toate Articolele</span>
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </Section>
