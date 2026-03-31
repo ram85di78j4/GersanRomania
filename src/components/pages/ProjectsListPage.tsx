@@ -139,16 +139,15 @@ export default function ProjectsListPage({ projects }: ProjectsListPageProps) {
             <p className="text-white/70 mb-6 max-w-md">
               Hai să discutăm despre cum putem transforma viziunea ta în realitate.
             </p>
-            <Link href="/#contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 transition-all"
-              >
-                Începe Proiectul
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </motion.button>
-            </Link>
+            <motion.button
+              onClick={() => window.location.href = '/#contact'}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 transition-all"
+            >
+              Începe Proiectul
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </motion.button>
           </div>
         </motion.div>
       </Section>

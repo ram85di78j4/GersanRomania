@@ -147,7 +147,18 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="w-full sm:w-auto"
             >
-              <Button variant="primary" size="lg" glow className="group w-full sm:w-auto min-w-[200px] shadow-xl shadow-cyan-500/20">
+              <Button 
+                variant="primary" 
+                size="lg" 
+                glow 
+                className="group w-full sm:w-auto min-w-[200px] shadow-xl shadow-cyan-500/20"
+                onClick={() => {
+                  const contactSection = document.querySelector('#contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <span className="relative z-10 font-bold">Începe Proiectul</span>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -158,7 +169,17 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="w-full sm:w-auto"
             >
-              <Button variant="secondary" size="lg" className="group w-full sm:w-auto min-w-[200px] shadow-lg">
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                className="group w-full sm:w-auto min-w-[200px] shadow-lg"
+                onClick={() => {
+                  const projectsSection = document.querySelector('#projects');
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" />
                 <span className="font-semibold">Vezi Demo</span>
               </Button>

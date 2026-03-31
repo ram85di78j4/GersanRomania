@@ -130,6 +130,7 @@ export default function EVSolutionCard({ solution, index }: EVSolutionCardProps)
           </div>
 
           <motion.button
+            onClick={() => window.location.href = '/#contact'}
             className={`mt-6 w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r ${colors.accentGradient} rounded-xl text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
