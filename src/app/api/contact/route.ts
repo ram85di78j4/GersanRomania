@@ -134,12 +134,80 @@ București, România | office@gersanromania.ro | +45 22295961
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    let emailSent = false;
+    let telegramSent = false;
 
-    return NextResponse.json(
-      { success: true, message: 'Mesajul a fost trimis cu succes!' },
-      { status: 200 }
-    );
+    try {
+      await transporter.sendMail(mailOptions);
+      emailSent = true;
+    } catch (emailError) {
+      console.error('Error sending email:', emailError);
+    }
+
+    // Send Telegram notification
+    const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+    const telegramChatId = process.env.TELEGRAM_CHAT_ID;
+
+    if (telegramBotToken && telegramChatId) {
+      try {
+        const telegramMessage = `
+🔔 <b>CERERE NOUĂ DE OFERTĂ - GERSAN ROMANIA</b>
+
+👤 <b>Nume:</b> ${name}
+${company ? `🏢 <b>Companie:</b> ${company}\n` : ''}📞 <b>Telefon:</b> ${phone}
+📧 <b>Email:</b> ${email}
+
+🔧 <b>Tip Proiect:</b> ${projectType}
+📍 <b>Localitate:</b> ${location}
+${budget ? `💰 <b>Buget:</b> ${budget}\n` : ''}
+📝 <b>Detalii:</b>
+${details}
+
+⏰ <i>${new Date().toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest' })}</i>
+        `.trim();
+
+        const telegramResponse = await fetch(
+          `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              chat_id: telegramChatId,
+              text: telegramMessage,
+              parse_mode: 'HTML',
+            }),
+          }
+        );
+
+        if (telegramResponse.ok) {
+          telegramSent = true;
+        } else {
+          console.error('Telegram API error:', await telegramResponse.text());
+        }
+      } catch (telegramError) {
+        console.error('Error sending Telegram notification:', telegramError);
+      }
+    }
+
+    // Return success if at least one notification method worked
+    if (emailSent || telegramSent) {
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'Mesajul a fost trimis cu succes!',
+          emailSent,
+          telegramSent
+        },
+        { status: 200 }
+      );
+    } else {
+      return NextResponse.json(
+        { error: 'A apărut o eroare la trimiterea mesajului. Vă rugăm încercați din nou.' },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(

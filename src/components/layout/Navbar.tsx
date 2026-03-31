@@ -45,6 +45,15 @@ export default function Navbar() {
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     
+    // Check if we're on a dynamic page (not homepage)
+    const isOnHomepage = window.location.pathname === '/';
+    
+    if (!isOnHomepage) {
+      // Navigate to homepage with hash
+      window.location.href = '/' + href;
+      return;
+    }
+    
     // Handle "Acasă" (home) - scroll to top
     if (href === '#hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });

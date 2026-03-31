@@ -11,10 +11,10 @@ import Button from '@/components/ui/Button';
 import { placeholderProjects } from '@/data/placeholder/projects';
 
 const categories = [
-  { id: 'all', name: 'All Projects', icon: Sparkles },
-  { id: 'commercial', name: 'Commercial', icon: Building2 },
+  { id: 'all', name: 'Toate Proiectele', icon: Sparkles },
+  { id: 'commercial', name: 'Comercial', icon: Building2 },
   { id: 'industrial', name: 'Industrial', icon: Factory },
-  { id: 'residential', name: 'Residential', icon: Home },
+  { id: 'residential', name: 'Rezidențial', icon: Home },
 ];
 
 export default function Projects() {

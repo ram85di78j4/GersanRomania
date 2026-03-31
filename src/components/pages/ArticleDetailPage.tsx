@@ -16,37 +16,43 @@ export default function ArticleDetailPage({ article }: ArticleDetailPageProps) {
   const slug = typeof article.slug === 'string' ? article.slug : article.slug.current;
 
   return (
-    <div className="pt-24 pb-16">
-      {/* Back Button */}
-      <Section className="pb-0">
-        <Link href="/stiri">
-          <motion.button
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            whileHover={{ x: -5 }}
-            className="inline-flex items-center text-pink-400 hover:text-pink-300 transition-colors mb-8"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Înapoi la Știri
-          </motion.button>
-        </Link>
-      </Section>
-
+    <div className="min-h-screen bg-black">
       {/* Article Header */}
-      <Section className="bg-black">
+      <Section className="pt-32 pb-16 bg-gradient-to-b from-black via-pink-950/5 to-black">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-12">
+            <Link href="/stiri">
+              <motion.button
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileHover={{ x: -5 }}
+                className="inline-flex items-center text-pink-400 hover:text-pink-300 transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5 mr-2" />
+                Înapoi la Știri
+              </motion.button>
+            </Link>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             {/* Category Badge */}
-            <div className="inline-block mb-6 px-4 py-2 bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30 rounded-full">
-              <span className="text-pink-400 font-semibold">{article.category.title}</span>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="inline-block mb-6"
+            >
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur-sm border border-pink-500/30 rounded-full px-4 sm:px-6 py-2 sm:py-3">
+                <Tag className="w-4 sm:w-5 h-4 sm:h-5 text-pink-400" />
+                <span className="text-sm sm:text-base text-pink-400 font-semibold">{article.category.title}</span>
+              </div>
+            </motion.div>
 
             {/* Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight">
               <GlowText className="bg-gradient-to-r from-white via-pink-200 to-white">
                 {article.title}
               </GlowText>
@@ -176,15 +182,14 @@ export default function ArticleDetailPage({ article }: ArticleDetailPageProps) {
           <p className="text-white/70 mb-8 max-w-2xl mx-auto">
             Contactează-ne pentru consultanță personalizată și soluții adaptate nevoilor tale specifice.
           </p>
-          <Link href="/#contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-xl shadow-lg shadow-pink-500/50 hover:shadow-pink-500/70 transition-all"
-            >
-              Contactează-ne
-            </motion.button>
-          </Link>
+          <motion.button
+            onClick={() => window.location.href = '/#contact'}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-xl shadow-lg shadow-pink-500/50 hover:shadow-pink-500/70 transition-all"
+          >
+            Contactează-ne
+          </motion.button>
         </motion.div>
       </Section>
     </div>
