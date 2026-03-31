@@ -10,56 +10,56 @@ const technologies = [
   {
     icon: Lightbulb,
     title: 'LED Eficient Energetic',
-    description: 'Tehnologie LED de ultimă generație cu eficiență luminoasă superioară și consum redus de energie pentru economii substanțiale pe termen lung.',
+    description: 'Tehnologie LED de ultimă generație cu eficiență luminosă superioară și consum minim de energie. Economii de până la 90% față de sistemele tradiționale, cu durată de viață excepțională.',
     specs: ['Până la 90% economie', 'Durată 50.000h+', 'CRI 90+'],
     glowColor: 'cyan' as const,
   },
   {
     icon: Palette,
     title: 'Sisteme RGB / RGBW / Ambient',
-    description: 'Soluții avansate de iluminat color cu milioane de nuanțe, controlabile individual pentru efecte dinamice și ambianțe personalizate.',
+    description: 'Soluții avansate de iluminat color cu peste 16 milioane de nuanțe, controlabile individual. Efecte dinamice, sincronizare cu muzica și ambiențe personalizate pentru orice spațiu.',
     specs: ['16M+ culori', 'Adresare individuală', 'Sincronizare muzică'],
     glowColor: 'purple' as const,
   },
   {
     icon: Cpu,
     title: 'Control Inteligent al Iluminatului',
-    description: 'Sisteme de control centralizat DMX, DALI și wireless pentru management profesional al iluminatului în spații complexe.',
+    description: 'Sisteme de control centralizat DMX512, DALI și wireless pentru management profesional. Programare avansată, scenarii personalizate și control remote pentru spații complexe.',
     specs: ['DMX512', 'DALI', 'Wireless'],
     glowColor: 'pink' as const,
   },
   {
     icon: Eye,
     title: 'Senzori de Prezență și Lumină',
-    description: 'Detecție automată a prezenței și nivelului de lumină naturală pentru optimizarea consumului și confortul utilizatorilor.',
+    description: 'Detecție inteligentă a prezenței și nivelului de lumină naturală. Optimizare automată a consumului energetic și confort maxim pentru utilizatori prin reglaj adaptiv.',
     specs: ['PIR & Microwave', 'Daylight harvesting', 'Reglaj automat'],
     glowColor: 'green' as const,
   },
   {
     icon: Workflow,
     title: 'Scenarii de Automatizare',
-    description: 'Programare complexă a scenariilor de iluminat bazate pe timp, evenimente sau condiții pentru automatizare completă.',
+    description: 'Programare complexă a scenariilor de iluminat bazate pe timp, evenimente sau condiții. Automatizare completă cu logică avansată și adaptare la comportamentul utilizatorilor.',
     specs: ['Programare temporală', 'Trigger evenimente', 'Logică avansată'],
     glowColor: 'cyan' as const,
   },
   {
     icon: Home,
     title: 'Integrare Smart Home',
-    description: 'Compatibilitate nativă cu ecosisteme smart home populare pentru control vocal și automatizări cross-platform.',
+    description: 'Compatibilitate nativă cu ecosisteme smart home majore: Amazon Alexa, Google Home, Apple HomeKit. Control vocal, automatizări cross-platform și sincronizare perfectă.',
     specs: ['Alexa', 'Google Home', 'Apple HomeKit'],
     glowColor: 'purple' as const,
   },
   {
     icon: Activity,
     title: 'Monitorizare și Control',
-    description: 'Platforme cloud pentru monitorizare în timp real, raportare energetică și control remote de oriunde din lume.',
+    description: 'Platforme cloud profesionale pentru monitorizare în timp real, raportare energetică detaliată și control remote de oriunde. Dashboard intuitiv și notificări instant.',
     specs: ['Dashboard real-time', 'Rapoarte energie', 'Control remote'],
     glowColor: 'pink' as const,
   },
   {
     icon: Zap,
     title: 'Management Stații EV',
-    description: 'Sisteme complete de management pentru stații de încărcare cu load balancing, plăți integrate și monitorizare avansată.',
+    description: 'Sisteme complete de management pentru stații de încărcare EV. Load balancing inteligent, plăți integrate, monitorizare avansată și raportare detaliată pentru flote.',
     specs: ['Load balancing', 'Plăți integrate', 'API deschis'],
     glowColor: 'green' as const,
   },
@@ -91,7 +91,7 @@ export default function Technologies() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -99,22 +99,22 @@ export default function Technologies() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-cyan-500/30 rounded-full px-4 py-2">
-              <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-cyan-400 font-semibold">Tehnologie Avansată</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-cyan-500/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
+              <Sparkles className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-cyan-400" />
+              <span className="text-xs sm:text-sm text-cyan-400 font-semibold">Tehnologie Avansată</span>
             </div>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-5 md:mb-6">
             Tehnologii <GlowText color="cyan">Premium</GlowText>
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Platforme integrate de control și management pentru iluminat arhitectural, automatizare inteligentă
-            și infrastructură de încărcare EV. Tehnologie profesională, execuție impecabilă.
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+            Tehnologii de vârf pentru iluminat arhitectural, automatizare inteligentă și infrastructură EV.
+            Sisteme certificate, performanță garantată, suport tehnic dedicat.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0">
           {technologies.map((tech, index) => (
             <TechnologyPanel key={index} technology={tech} index={index} />
           ))}

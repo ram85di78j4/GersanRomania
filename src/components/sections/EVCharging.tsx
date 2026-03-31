@@ -11,7 +11,7 @@ const solutions = [
     icon: Home,
     title: 'Soluții Rezidențiale',
     subtitle: 'Locuințe',
-    description: 'Stații de încărcare inteligente pentru locuințe unifamiliale și complexe rezidențiale. Instalare profesională, control prin aplicație și integrare completă cu sistemul energetic al casei.',
+    description: 'Stații de încărcare inteligente pentru locuințe unifamiliale și complexe rezidențiale. Instalare profesională certificată, control prin aplicație mobilă și integrare completă cu sistemul energetic și panouri solare.',
     features: [
       'Wallbox 7-22kW pentru garaj',
       'Control și programare prin aplicație',
@@ -29,7 +29,7 @@ const solutions = [
     icon: Building2,
     title: 'Soluții Corporate',
     subtitle: 'Companii',
-    description: 'Infrastructură completă de încărcare pentru birouri și sedii de companii. Management centralizat, raportare detaliată și acces controlat pentru angajați și vizitatori.',
+    description: 'Infrastructură completă de încărcare pentru birouri și sedii corporate. Management centralizat cu load balancing, raportare detaliată, acces controlat prin RFID și facturare automată pentru angajați.',
     features: [
       'Stații multiple cu load balancing',
       'Sistem de acces cu carduri RFID',
@@ -47,7 +47,7 @@ const solutions = [
     icon: ParkingCircle,
     title: 'Parcări Comerciale',
     subtitle: 'Retail & Hospitality',
-    description: 'Hub-uri de încărcare pentru centre comerciale, hoteluri și spații publice. Încărcare rapidă, plăți integrate și experiență premium pentru clienți.',
+    description: 'Hub-uri de încărcare ultra-rapidă pentru centre comerciale, hoteluri și spații publice. Încărcare DC până la 350kW, plăți contactless integrate, branding personalizat și experiență premium pentru clienți.',
     features: [
       'Încărcare ultra-rapidă DC 150-350kW',
       'Plăți contactless și aplicație',
@@ -65,7 +65,7 @@ const solutions = [
     icon: Truck,
     title: 'Managementul Flotelor',
     subtitle: 'Flote Comerciale',
-    description: 'Soluții dedicate pentru flote de vehicule electrice. Optimizare încărcare, planificare inteligentă și raportare completă pentru eficiență maximă.',
+    description: 'Soluții dedicate pentru flote de vehicule electrice comerciale. Optimizare automată a încărcării, planificare inteligentă, raportare completă și integrare cu software-ul de fleet management pentru eficiență maximă.',
     features: [
       'Planificare automată încărcare',
       'Optimizare costuri energetice',
@@ -146,7 +146,7 @@ export default function EVCharging() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -154,22 +154,22 @@ export default function EVCharging() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/10 to-cyan-500/10 backdrop-blur-sm border border-green-500/30 rounded-full px-4 py-2">
-              <Sparkles className="w-4 h-4 text-green-400" />
-              <span className="text-sm text-green-400 font-semibold">Infrastructură EV</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/10 to-cyan-500/10 backdrop-blur-sm border border-green-500/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
+              <Sparkles className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-green-400" />
+              <span className="text-xs sm:text-sm text-green-400 font-semibold">Infrastructură EV</span>
             </div>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-            Soluții <GlowText color="green">Încărcare EV</GlowText>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-5 md:mb-6">
+            Stații <GlowText color="green">Încărcare</GlowText> EV
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Proiectare și implementare de infrastructură completă pentru încărcarea vehiculelor electrice.
-            Soluții integrate de la rezidențial la comercial și flote corporate, cu management inteligent.
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+            Infrastructură completă pentru încărcarea vehiculelor electrice, de la soluții rezidențiale la stații comerciale și flote corporate.
+            Management inteligent, monitorizare în timp real, suport tehnic dedicat.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-10 sm:mb-12 md:mb-16 px-4 sm:px-0">
           {solutions.map((solution, index) => (
             <EVSolutionCard key={index} solution={solution} index={index} />
           ))}
@@ -185,7 +185,7 @@ export default function EVCharging() {
           <h3 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">
             De Ce Să Alegeți Soluțiile Noastre
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 px-4 sm:px-0">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (

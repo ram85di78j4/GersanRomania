@@ -3,8 +3,8 @@
 
 import { sanityConfig } from './config';
 
-// Placeholder for future Sanity client
-// Uncomment and configure when ready to connect to Sanity CMS:
+// Sanity CMS client (currently disabled)
+// The site uses static data. Uncomment below when ready to integrate Sanity CMS:
 /*
 import { createClient } from '@sanity/client';
 
@@ -16,20 +16,18 @@ export const sanityClient = createClient({
 });
 */
 
-// Helper function to fetch data (placeholder)
+// Helper function to fetch data
+// Currently returns empty array - replace with Sanity client when CMS is integrated
 export async function fetchContent<T>(query: string): Promise<T[]> {
-  // TODO: Replace with actual Sanity client fetch
+  // When Sanity is configured, uncomment:
   // return sanityClient.fetch<T[]>(query);
-  
-  // Currently using placeholder data - Sanity client not configured
   return [] as T[];
 }
 
-// Helper function to fetch single document (placeholder)
+// Helper function to fetch single document
+// Currently returns null - replace with Sanity client when CMS is integrated
 export async function fetchDocument<T>(query: string): Promise<T | null> {
-  // TODO: Replace with actual Sanity client fetch
+  // When Sanity is configured, uncomment:
   // return sanityClient.fetch<T>(query);
-  
-  // Currently using placeholder data - Sanity client not configured
   return null;
 }

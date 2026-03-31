@@ -97,7 +97,7 @@ export default function News() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -105,18 +105,17 @@ export default function News() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur-sm border border-pink-500/30 rounded-full px-4 py-2">
-              <Newspaper className="w-4 h-4 text-pink-400" />
-              <span className="text-sm text-pink-400 font-semibold">Știri & Tendințe</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur-sm border border-pink-500/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
+              <Newspaper className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-pink-400" />
+              <span className="text-xs sm:text-sm text-pink-400 font-semibold">Știri & Tendințe</span>
             </div>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-5 md:mb-6">
             Ultimele <GlowText color="pink">Noutăți</GlowText>
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Rămâi la curent cu cele mai noi tendințe și inovații în domeniul
-            iluminatului LED și infrastructurii de încărcare pentru vehicule electrice
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+            Tendințe, inovații și case studies din domeniul iluminatului LED, automatizării inteligente și infrastructurii de încărcare pentru vehicule electrice.
           </p>
         </motion.div>
 

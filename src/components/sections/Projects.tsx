@@ -156,7 +156,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -164,18 +164,18 @@ export default function Projects() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-sm border border-purple-500/30 rounded-full px-4 py-2">
-              <Sparkles className="w-4 h-4 text-purple-400" />
-              <span className="text-sm text-purple-400 font-semibold">Portofoliu Premium</span>
+            <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-sm border border-purple-500/30 rounded-full px-3 sm:px-4 py-1.5 sm:py-2">
+              <Sparkles className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-purple-400" />
+              <span className="text-xs sm:text-sm text-purple-400 font-semibold">Portofoliu Premium</span>
             </div>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-5 md:mb-6">
             Proiecte <GlowText color="purple">Realizate</GlowText>
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Proiecte integrate de iluminat arhitectural, automatizare și infrastructură EV pentru spații comerciale,
-            industriale și rezidențiale. Execuție premium de la concept la punere în funcțiune.
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+            Portofoliu de proiecte integrate pentru iluminat arhitectural, automatizare și infrastructură EV.
+            Execuție profesională, rezultate măsurabile, clienți mulțumiți.
           </p>
         </motion.div>
 
@@ -184,7 +184,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-16"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16 px-4 sm:px-0"
         >
           {categories.map((category) => {
             const Icon = category.icon;
@@ -194,7 +194,7 @@ export default function Projects() {
               <motion.button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`group relative px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                className={`group relative px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 ${
                   isActive
                     ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-[0_0_30px_rgba(168,85,247,0.3)]'
                     : 'bg-white/5 backdrop-blur-sm border border-white/10 text-white/70 hover:text-white hover:border-purple-500/50'
@@ -202,8 +202,8 @@ export default function Projects() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="flex items-center space-x-2">
-                  <Icon className="w-4 h-4" />
+                <span className="flex items-center space-x-1.5 sm:space-x-2">
+                  <Icon className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                   <span>{category.name}</span>
                 </span>
                 {isActive && (
@@ -220,7 +220,7 @@ export default function Projects() {
 
         <motion.div 
           layout
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0"
         >
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />

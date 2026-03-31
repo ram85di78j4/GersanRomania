@@ -1,6 +1,7 @@
 {
-  "name": "led-ev-landing",
-  "version": "0.1.0",
+  "name": "gersan-romania-website",
+  "version": "1.0.0",
+  "description": "GERSAN ROMANIA - Premium LED lighting, smart automation, and EV charging solutions",
   "private": true,
   "scripts": {
     "dev": "next dev",

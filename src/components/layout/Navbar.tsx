@@ -92,15 +92,15 @@ export default function Navbar() {
                 <div className="absolute inset-0 blur-xl bg-cyan-400/40 animate-pulse" />
               </div>
               <div>
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-2xl font-black text-white">
-                    Gersan
+                <div className="flex items-baseline space-x-3">
+                  <span className="text-3xl font-black text-white tracking-tight">
+                    GERSAN
                   </span>
-                  <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                    Romania
+                  <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    ROMANIA
                   </span>
                 </div>
-                <div className="text-[9px] text-cyan-400/60 font-semibold tracking-[0.15em] uppercase mt-0.5">Iluminat LED Premium</div>
+                <div className="text-[10px] text-cyan-400/70 font-bold tracking-[0.2em] uppercase mt-1 ml-0.5">Soluții Integrate LED & EV</div>
               </div>
             </motion.a>
 
@@ -289,9 +289,9 @@ export default function Navbar() {
                   transition={{ delay: 0.5 }}
                   className="mt-8 pt-8 border-t border-white/10"
                 >
-                  <p className="text-xs text-white/40 text-center">
-                    © 2026 LuxeLED. Toate drepturile rezervate.
-                  </p>
+                  <div className="text-center text-white/40 text-xs mt-8">
+                    &copy; 2026 GERSAN ROMANIA. Toate drepturile rezervate.
+                  </div>
                 </motion.div>
               </div>
             </motion.div>

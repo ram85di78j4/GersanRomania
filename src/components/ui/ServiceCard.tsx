@@ -63,7 +63,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
       className="group relative h-full"
     >
-      <div className={`relative h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 transition-all duration-500 ${colors.border} ${colors.shadow}`}>
+      <div className={`relative h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 transition-all duration-500 ${colors.border} ${colors.shadow}`}>
         <motion.div 
           className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl"
           initial={{ opacity: 0 }}
