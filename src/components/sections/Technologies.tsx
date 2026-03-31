@@ -67,7 +67,7 @@ const technologies = [
 
 export default function Technologies() {
   return (
-    <Section className="bg-black relative overflow-hidden">
+    <Section id="technologies" className="bg-black relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/10 via-transparent to-transparent" />
       
       <div className="absolute inset-0 overflow-hidden">

@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 import GlowText from '@/components/ui/GlowText';
+import SuccessModal from '@/components/ui/SuccessModal';
 import { CONTACT_DATA, createMailtoLink, createTelLink, formatEmail, formatPhone } from '@/lib/contact';
 
 export default function Contact() {
@@ -23,6 +24,8 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [contactInfo, setContactInfo] = useState({ email: '', phone: '', emailHref: '#', phoneHref: '#' });
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Decode contact info on client side
@@ -37,32 +40,41 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
     
-    // Backend integration point
-    // When ready, replace the simulation below with your API endpoint:
-    // const response = await fetch('/api/contact', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(formData),
-    // });
-    
-    // Simulate API call (remove when backend is ready)
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Reset form after successful submission
-    setFormData({
-      name: '',
-      company: '',
-      phone: '',
-      email: '',
-      projectType: '',
-      location: '',
-      budget: '',
-      details: '',
-    });
-    
-    setIsSubmitting(false);
-    alert('Mulțumim! Vă vom contacta în curând.');
+    try {
+      // Send form data to API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'A apărut o eroare la trimiterea mesajului.');
+      }
+      
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        company: '',
+        phone: '',
+        email: '',
+        projectType: '',
+        location: '',
+        budget: '',
+        details: '',
+      });
+      
+      // Show success modal
+      setShowSuccess(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'A apărut o eroare. Vă rugăm încercați din nou.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -70,7 +82,10 @@ export default function Contact() {
   };
 
   return (
-    <Section id="contact" className="bg-gradient-to-b from-black via-cyan-950/5 to-black">
+    <>
+      <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
+      
+      <Section id="contact" className="bg-gradient-to-b from-black via-cyan-950/5 to-black">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px]"
@@ -381,6 +396,16 @@ export default function Contact() {
                 />
               </div>
 
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm"
+                >
+                  {error}
+                </motion.div>
+              )}
+
               <Button 
                 type="submit" 
                 variant="primary" 
@@ -389,8 +414,21 @@ export default function Contact() {
                 className="w-full"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Se trimite...' : 'Trimite Cererea'}
-                <Send className="ml-2 w-5 h-5" />
+                {isSubmitting ? (
+                  <>
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full mr-2"
+                    />
+                    Se trimite...
+                  </>
+                ) : (
+                  <>
+                    Trimite Cererea
+                    <Send className="ml-2 w-5 h-5" />
+                  </>
+                )}
               </Button>
 
               <p className="text-xs text-white/40 text-center mt-4">
@@ -401,5 +439,6 @@ export default function Contact() {
         </div>
       </div>
     </Section>
+    </>
   );
 }

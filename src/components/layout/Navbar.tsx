@@ -44,9 +44,24 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
+    
+    // Handle "Acasă" (home) - scroll to top
+    if (href === '#hero') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
+    // Handle other sections with offset for sticky navbar
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 80; // Approximate navbar height
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
