@@ -44,13 +44,13 @@ export async function fetchContent<T>(query: string): Promise<T[]> {
 }
 
 // Helper function to fetch single document
-export async function fetchDocument<T>(query: string): Promise<T | null> {
+export async function fetchDocument<T>(query: string, params?: Record<string, any>): Promise<T | null> {
   if (!isSanityConfigured() || !sanityClient) {
     return null;
   }
   
   try {
-    return await sanityClient.fetch<T>(query);
+    return await sanityClient.fetch<T>(query, params || {});
   } catch (error) {
     console.error('Error fetching document from Sanity:', error);
     return null;
@@ -94,7 +94,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     seo
   }`;
   
-  return fetchDocument<Project>(query);
+  return fetchDocument<Project>(query, { slug });
 }
 
 // Fetch all articles
@@ -129,7 +129,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     seo
   }`;
   
-  return fetchDocument<Article>(query);
+  return fetchDocument<Article>(query, { slug });
 }
 
 // Fetch featured projects
