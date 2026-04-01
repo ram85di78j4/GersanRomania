@@ -2,30 +2,8 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, ChevronDown } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import GlowText from '@/components/ui/GlowText';
-import AnimatedBackground from '@/components/ui/AnimatedBackground';
-
-const LightingScene = dynamic(() => import('@/components/3d/LightingScene'), {
-  ssr: false,
-  loading: () => (
-    <div className="absolute inset-0 flex items-center justify-center">
-      <motion.div
-        className="w-32 h-32 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.5, 0.8, 0.5],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-    </div>
-  )
-});
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -37,30 +15,77 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
+  const lightIntensity = useTransform(scrollYProgress, [0, 0.3], [0.15, 0.08]);
 
   return (
     <section 
       id="hero"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
     >
-      <AnimatedBackground />
-      
-      <div className="absolute inset-0 opacity-30 sm:opacity-40">
-        <LightingScene />
+      {/* Realistic Spotlight Lighting */}
+      <div className="absolute inset-0">
+        {/* Left spotlights */}
+        <motion.div 
+          className="absolute top-1/4 -left-32 w-[600px] h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 30%, transparent 70%)',
+            filter: 'blur(60px)',
+            opacity: lightIntensity,
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/2 -left-24 w-[500px] h-[500px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,250,240,0.12) 0%, rgba(255,250,240,0.06) 35%, transparent 70%)',
+            filter: 'blur(50px)',
+            opacity: lightIntensity,
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-1/4 -left-20 w-[450px] h-[450px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
+            filter: 'blur(55px)',
+            opacity: lightIntensity,
+          }}
+        />
+        
+        {/* Right spotlights */}
+        <motion.div 
+          className="absolute top-1/3 -right-32 w-[600px] h-[600px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 30%, transparent 70%)',
+            filter: 'blur(60px)',
+            opacity: lightIntensity,
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/2 -right-24 w-[500px] h-[500px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,250,240,0.12) 0%, rgba(255,250,240,0.06) 35%, transparent 70%)',
+            filter: 'blur(50px)',
+            opacity: lightIntensity,
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-1/3 -right-20 w-[450px] h-[450px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
+            filter: 'blur(55px)',
+            opacity: lightIntensity,
+          }}
+        />
+        
+        {/* Center ambient glow */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 60%)',
+            filter: 'blur(80px)',
+          }}
+        />
       </div>
-
-      <motion.div 
-        className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
-        animate={{
-          x: ["-100%", "100%"],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
 
       <motion.div
         style={{ opacity, scale, y }}
