@@ -111,7 +111,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="block text-white mb-2 sm:mb-3"
             >
-              Sisteme Integrate
+              Iluminat Inteligent
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: 20 }}
@@ -119,11 +119,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="block"
             >
-              <GlowText color="cyan" className="inline-block">LED</GlowText>
-              <span className="text-white/90"> • </span>
-              <GlowText color="purple" className="inline-block">Automatizare</GlowText>
-              <span className="text-white/90"> • </span>
-              <GlowText color="green" className="inline-block">EV</GlowText>
+              <span className="text-white/90">și </span>
+              <GlowText color="cyan" className="inline-block">Automatizare</GlowText>
+              <span className="text-white/90"> Premium</span>
             </motion.span>
           </motion.h1>
 
@@ -133,8 +131,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-base sm:text-lg md:text-xl text-white/80 mb-16 sm:mb-20 md:mb-24 max-w-3xl mx-auto leading-relaxed font-light px-4 sm:px-0"
           >
-            Proiectare, implementare și execuție completă pentru iluminat arhitectural, automatizare inteligentă și infrastructură EV.
-            <span className="block mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-cyan-400/90 font-normal">De la concept la punere în funcțiune</span>
+            Proiectăm și implementăm soluții complete de iluminat LED, automatizare inteligentă și infrastructură de încărcare electrică pentru proiecte comerciale, industriale și rezidențiale.
+            <span className="block mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-cyan-400/90 font-normal">Execuție profesională de la concept la punere în funcțiune</span>
           </motion.p>
 
         </div>
