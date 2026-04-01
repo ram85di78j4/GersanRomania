@@ -10,7 +10,7 @@ const services = [
   {
     icon: Building2,
     title: 'Iluminat Comercial',
-    description: 'Sisteme complete de iluminat arhitectural pentru spații comerciale, retail și birouri. Integrăm tehnologie LED premium cu control inteligent pentru a crea ambiențe care reflectă identitatea brandului și asigură eficiență energetică maximă.',
+    description: 'Sisteme LED arhitecturale pentru retail, birouri și spații comerciale. Design personalizat care reflectă identitatea brandului cu economii energetice de până la 80%.',
     glowColor: 'cyan' as const,
     features: [
       'Sisteme LED eficiente energetic',
@@ -21,7 +21,7 @@ const services = [
   {
     icon: Factory,
     title: 'Iluminat Industrial',
-    description: 'Soluții robuste de iluminat pentru fabrici, depozite și hale industriale. Implementăm sisteme LED de înaltă performanță cu durabilitate excepțională, management inteligent și reduceri de până la 70% din costurile energetice.',
+    description: 'LED high-bay pentru fabrici, depozite și hale industriale. Rezistență la condiții extreme, durată de viață 50.000h+ și reducere costuri operaționale cu 70%.',
     glowColor: 'purple' as const,
     features: [
       'LED high-bay pentru înălțimi mari',
@@ -32,7 +32,7 @@ const services = [
   {
     icon: Home,
     title: 'Iluminat Rezidențial',
-    description: 'Soluții personalizate de iluminat și automatizare pentru locuințe premium. De la apartamente moderne la vile de lux, proiectăm sisteme care combină perfect estetica cu funcționalitatea și controlul inteligent.',
+    description: 'Sisteme LED personalizate pentru apartamente și vile premium. Integrare smart home completă, scenarii personalizate și control vocal.',
     glowColor: 'pink' as const,
     features: [
       'Iluminat adaptat stilului de viață',
@@ -43,7 +43,7 @@ const services = [
   {
     icon: Lightbulb,
     title: 'Benzi LED și Sisteme RGB',
-    description: 'Sisteme avansate de iluminat arhitectural cu benzi LED adresabile și control dinamic al culorii. Soluții complete pentru iluminat decorativ, ambiental și scenic, integrate cu platforme de automatizare profesionale.',
+    description: 'Benzi LED adresabile RGB/RGBW pentru iluminat arhitectural și decorativ. Control dinamic, sincronizare cu muzică și efecte personalizate.',
     glowColor: 'cyan' as const,
     features: [
       'RGB și RGBW adresabile individual',
@@ -54,7 +54,7 @@ const services = [
   {
     icon: Zap,
     title: 'Stații de Încărcare EV',
-    description: 'Infrastructură completă pentru încărcarea vehiculelor electrice, de la soluții rezidențiale la stații comerciale și flote corporate. Sisteme cu management inteligent, monitorizare în timp real și plăți integrate.',
+    description: 'Infrastructură EV de la 7kW rezidențial la 350kW ultra-rapid comercial. Management inteligent, monitorizare real-time și plăți integrate.',
     glowColor: 'green' as const,
     features: [
       'Încărcare rapidă până la 350kW',
@@ -65,7 +65,7 @@ const services = [
   {
     icon: Cpu,
     title: 'Automatizări Inteligente',
-    description: 'Platforme integrate de automatizare pentru control complet al iluminatului, climatizării și consumului energetic. Sisteme profesionale DMX, DALI și KNX cu programare avansată, scenarii personalizate și optimizare automată.',
+    description: 'Control centralizat DMX, DALI și KNX pentru iluminat și climatizare. Scenarii programabile, optimizare automată și integrare IoT.',
     glowColor: 'purple' as const,
     features: [
       'Control centralizat DMX/DALI',
@@ -76,7 +76,7 @@ const services = [
   {
     icon: Smartphone,
     title: 'Case Inteligente',
-    description: 'Ecosisteme smart home complete cu integrare totală a iluminatului, climatizării, securității și multimedia. Control centralizat, scenarii personalizate și compatibilitate nativă cu toate platformele majore de automatizare.',
+    description: 'Ecosisteme smart home complete: iluminat, climatizare, securitate și multimedia. Control vocal, scenarii circadiene și compatibilitate Alexa, Google, Apple HomeKit.',
     glowColor: 'pink' as const,
     features: [
       'Control vocal și prin aplicație',

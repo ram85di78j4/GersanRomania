@@ -10,56 +10,56 @@ const technologies = [
   {
     icon: Lightbulb,
     title: 'LED Eficient Energetic',
-    description: 'Tehnologie LED de ultimă generație cu eficiență luminosă superioară și consum minim de energie. Economii de până la 90% față de sistemele tradiționale, cu durată de viață excepțională.',
+    description: 'Tehnologie LED cu eficiență luminosă superioară. Economii până la 90% față de sistemele tradiționale și durată de viață 50.000h+.',
     specs: ['Până la 90% economie', 'Durată 50.000h+', 'CRI 90+'],
     glowColor: 'cyan' as const,
   },
   {
     icon: Palette,
     title: 'Sisteme RGB / RGBW / Ambient',
-    description: 'Soluții avansate de iluminat color cu peste 16 milioane de nuanțe, controlabile individual. Efecte dinamice, sincronizare cu muzica și ambiențe personalizate pentru orice spațiu.',
+    description: 'Iluminat color cu 16M+ nuanțe și control individual. Efecte dinamice, sincronizare cu muzică și ambiențe personalizate.',
     specs: ['16M+ culori', 'Adresare individuală', 'Sincronizare muzică'],
     glowColor: 'purple' as const,
   },
   {
     icon: Cpu,
     title: 'Control Inteligent al Iluminatului',
-    description: 'Sisteme de control centralizat DMX512, DALI și wireless pentru management profesional. Programare avansată, scenarii personalizate și control remote pentru spații complexe.',
+    description: 'Control centralizat DMX512, DALI și wireless. Programare avansată, scenarii personalizate și management remote.',
     specs: ['DMX512', 'DALI', 'Wireless'],
     glowColor: 'pink' as const,
   },
   {
     icon: Eye,
     title: 'Senzori de Prezență și Lumină',
-    description: 'Detecție inteligentă a prezenței și nivelului de lumină naturală. Optimizare automată a consumului energetic și confort maxim pentru utilizatori prin reglaj adaptiv.',
+    description: 'Detecție inteligentă a prezenței și luminii naturale. Optimizare automată a consumului și reglaj adaptiv pentru confort maxim.',
     specs: ['PIR & Microwave', 'Daylight harvesting', 'Reglaj automat'],
     glowColor: 'green' as const,
   },
   {
     icon: Workflow,
     title: 'Scenarii de Automatizare',
-    description: 'Programare complexă a scenariilor de iluminat bazate pe timp, evenimente sau condiții. Automatizare completă cu logică avansată și adaptare la comportamentul utilizatorilor.',
+    description: 'Programare scenarii bazate pe timp, evenimente sau condiții. Logică avansată și adaptare la comportamentul utilizatorilor.',
     specs: ['Programare temporală', 'Trigger evenimente', 'Logică avansată'],
     glowColor: 'cyan' as const,
   },
   {
     icon: Home,
     title: 'Integrare Smart Home',
-    description: 'Compatibilitate nativă cu ecosisteme smart home majore: Amazon Alexa, Google Home, Apple HomeKit. Control vocal, automatizări cross-platform și sincronizare perfectă.',
+    description: 'Compatibilitate cu Amazon Alexa, Google Home și Apple HomeKit. Control vocal și automatizări cross-platform.',
     specs: ['Alexa', 'Google Home', 'Apple HomeKit'],
     glowColor: 'purple' as const,
   },
   {
     icon: Activity,
     title: 'Monitorizare și Control',
-    description: 'Platforme cloud profesionale pentru monitorizare în timp real, raportare energetică detaliată și control remote de oriunde. Dashboard intuitiv și notificări instant.',
+    description: 'Platforme cloud pentru monitorizare real-time și raportare energetică. Dashboard intuitiv și control remote de oriunde.',
     specs: ['Dashboard real-time', 'Rapoarte energie', 'Control remote'],
     glowColor: 'pink' as const,
   },
   {
     icon: Zap,
     title: 'Management Stații EV',
-    description: 'Sisteme complete de management pentru stații de încărcare EV. Load balancing inteligent, plăți integrate, monitorizare avansată și raportare detaliată pentru flote.',
+    description: 'Management complet pentru stații de încărcare EV. Load balancing inteligent, plăți integrate și raportare pentru flote.',
     specs: ['Load balancing', 'Plăți integrate', 'API deschis'],
     glowColor: 'green' as const,
   },
@@ -109,8 +109,7 @@ export default function Technologies() {
             Tehnologii <GlowText color="cyan">Premium</GlowText>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            Tehnologii de vârf pentru iluminat arhitectural, automatizare inteligentă și infrastructură EV.
-            Sisteme certificate, performanță garantată, suport tehnic dedicat.
+            Sisteme certificate pentru iluminat LED, automatizare și infrastructură EV.
           </p>
         </motion.div>
 

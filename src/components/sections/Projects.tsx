@@ -65,8 +65,7 @@ export default function Projects() {
             Proiecte <GlowText color="purple">Realizate</GlowText>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            Portofoliu de proiecte integrate pentru iluminat arhitectural, automatizare și infrastructură EV.
-            Execuție profesională, rezultate măsurabile, clienți mulțumiți.
+            Implementări complete de iluminat LED, automatizare și infrastructură EV.
           </p>
         </motion.div>
 

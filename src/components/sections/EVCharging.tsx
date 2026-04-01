@@ -11,7 +11,7 @@ const solutions = [
     icon: Home,
     title: 'Soluții Rezidențiale',
     subtitle: 'Locuințe',
-    description: 'Stații de încărcare inteligente pentru locuințe unifamiliale și complexe rezidențiale. Instalare profesională certificată, control prin aplicație mobilă și integrare completă cu sistemul energetic și panouri solare.',
+    description: 'Wallbox inteligent 7-22kW pentru locuințe unifamiliale și complexe. Control prin aplicație, integrare cu panouri solare și monitorizare consum.',
     features: [
       'Wallbox 7-22kW pentru garaj',
       'Control și programare prin aplicație',
@@ -29,7 +29,7 @@ const solutions = [
     icon: Building2,
     title: 'Soluții Corporate',
     subtitle: 'Companii',
-    description: 'Infrastructură completă de încărcare pentru birouri și sedii corporate. Management centralizat cu load balancing, raportare detaliată, acces controlat prin RFID și facturare automată pentru angajați.',
+    description: 'Infrastructură pentru birouri și sedii corporate. Load balancing inteligent, acces RFID, raportare și facturare automată.',
     features: [
       'Stații multiple cu load balancing',
       'Sistem de acces cu carduri RFID',
@@ -47,7 +47,7 @@ const solutions = [
     icon: ParkingCircle,
     title: 'Parcări Comerciale',
     subtitle: 'Retail & Hospitality',
-    description: 'Hub-uri de încărcare ultra-rapidă pentru centre comerciale, hoteluri și spații publice. Încărcare DC până la 350kW, plăți contactless integrate, branding personalizat și experiență premium pentru clienți.',
+    description: 'Hub-uri ultra-rapide DC 150-350kW pentru centre comerciale și hoteluri. Plăți contactless, branding personalizat și monitorizare remotă.',
     features: [
       'Încărcare ultra-rapidă DC 150-350kW',
       'Plăți contactless și aplicație',
@@ -65,7 +65,7 @@ const solutions = [
     icon: Truck,
     title: 'Managementul Flotelor',
     subtitle: 'Flote Comerciale',
-    description: 'Soluții dedicate pentru flote de vehicule electrice comerciale. Optimizare automată a încărcării, planificare inteligentă, raportare completă și integrare cu software-ul de fleet management pentru eficiență maximă.',
+    description: 'Soluții pentru flote comerciale. Planificare automată, optimizare costuri energetice și integrare cu software fleet management.',
     features: [
       'Planificare automată încărcare',
       'Optimizare costuri energetice',
@@ -85,25 +85,25 @@ const benefits = [
   {
     icon: Wrench,
     title: 'Instalare Profesională',
-    description: 'Echipă certificată pentru instalare completă și punere în funcțiune',
+    description: 'Echipă certificată pentru instalare și punere în funcțiune',
     color: 'cyan',
   },
   {
     icon: Brain,
     title: 'Management Inteligent',
-    description: 'Platformă cloud pentru control, monitorizare și optimizare automată',
+    description: 'Platformă cloud pentru control și optimizare automată',
     color: 'purple',
   },
   {
     icon: Gauge,
     title: 'Eficiență Maximă',
-    description: 'Load balancing și programare pentru costuri energetice minime',
+    description: 'Load balancing pentru costuri energetice minime',
     color: 'pink',
   },
   {
     icon: Sparkles,
     title: 'Integrare Modernă',
-    description: 'Compatibilitate cu toate vehiculele electrice și sisteme smart',
+    description: 'Compatibilitate cu toate vehiculele electrice',
     color: 'green',
   },
 ];
@@ -164,8 +164,7 @@ export default function EVCharging() {
             Stații <GlowText color="green">Încărcare</GlowText> EV
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-            Infrastructură completă pentru încărcarea vehiculelor electrice, de la soluții rezidențiale la stații comerciale și flote corporate.
-            Management inteligent, monitorizare în timp real, suport tehnic dedicat.
+            Infrastructură completă EV: de la 7kW rezidențial la 350kW ultra-rapid comercial.
           </p>
         </motion.div>
 

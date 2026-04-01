@@ -103,7 +103,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-5 sm:mb-6 md:mb-8 leading-[1.05] sm:leading-[1.1] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-5 sm:mb-6 md:mb-8 leading-[1.05] sm:leading-[1.1] tracking-tight"
           >
             <motion.span
               initial={{ opacity: 0, x: -20 }}
@@ -111,7 +111,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="block text-white mb-2 sm:mb-3"
             >
-              Iluminat LED
+              Sisteme Integrate
             </motion.span>
             <motion.span
               initial={{ opacity: 0, x: 20 }}
@@ -119,9 +119,11 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="block"
             >
-              <GlowText color="cyan" className="inline-block">Premium</GlowText>
-              <span className="text-white/90"> pentru </span>
-              <GlowText color="purple" className="inline-block">Viitor</GlowText>
+              <GlowText color="cyan" className="inline-block">LED</GlowText>
+              <span className="text-white/90"> • </span>
+              <GlowText color="purple" className="inline-block">Automatizare</GlowText>
+              <span className="text-white/90"> • </span>
+              <GlowText color="green" className="inline-block">EV</GlowText>
             </motion.span>
           </motion.h1>
 
@@ -129,55 +131,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto leading-relaxed font-light px-4 sm:px-0"
+            className="text-base sm:text-lg md:text-xl text-white/80 mb-16 sm:mb-20 md:mb-24 max-w-3xl mx-auto leading-relaxed font-light px-4 sm:px-0"
           >
-            Proiectăm și implementăm sisteme integrate de iluminat LED, automatizare inteligentă și infrastructură de încărcare EV. Soluții complete de la concept la execuție.
-            <span className="block mt-4 sm:mt-5 text-sm sm:text-base md:text-lg lg:text-xl text-cyan-400/90 font-normal">Design premium • Control inteligent • Eficiență maximă</span>
+            Proiectare, implementare și execuție completă pentru iluminat arhitectural, automatizare inteligentă și infrastructură EV.
+            <span className="block mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-cyan-400/90 font-normal">De la concept la punere în funcțiune</span>
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5 md:gap-6 lg:gap-8 max-w-5xl mx-auto px-6 sm:px-4 md:px-0"
-          >
-            {[
-              { value: '500+', label: 'Proiecte Finalizate', color: 'cyan' },
-              { value: '98%', label: 'Clienți Mulțumiți', color: 'purple' },
-              { value: '24/7', label: 'Suport Expert', color: 'pink' },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-xl sm:rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 group-hover:border-white/20 transition-all shadow-lg">
-                  <motion.div 
-                    className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-2 sm:mb-3 bg-gradient-to-r ${
-                      stat.color === 'cyan' ? 'from-cyan-400 to-cyan-600' :
-                      stat.color === 'purple' ? 'from-purple-400 to-purple-600' :
-                      'from-pink-400 to-pink-600'
-                    } bg-clip-text text-transparent`}
-                    animate={{
-                      backgroundPosition: ['0%', '100%', '0%'],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  >
-                    {stat.value}
-                  </motion.div>
-                  <div className="text-white/70 font-medium text-sm sm:text-base">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </motion.div>
 
