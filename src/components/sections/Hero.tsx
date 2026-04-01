@@ -15,7 +15,6 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
-  const lightIntensity = useTransform(scrollYProgress, [0, 0.3], [0.15, 0.08]);
 
   return (
     <section 
@@ -23,66 +22,102 @@ export default function Hero() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
     >
-      {/* Realistic Spotlight Lighting */}
-      <div className="absolute inset-0">
-        {/* Left spotlights */}
-        <motion.div 
-          className="absolute top-1/4 -left-32 w-[600px] h-[600px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 30%, transparent 70%)',
-            filter: 'blur(60px)',
-            opacity: lightIntensity,
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/2 -left-24 w-[500px] h-[500px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,250,240,0.12) 0%, rgba(255,250,240,0.06) 35%, transparent 70%)',
-            filter: 'blur(50px)',
-            opacity: lightIntensity,
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/4 -left-20 w-[450px] h-[450px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
-            filter: 'blur(55px)',
-            opacity: lightIntensity,
-          }}
-        />
-        
-        {/* Right spotlights */}
-        <motion.div 
-          className="absolute top-1/3 -right-32 w-[600px] h-[600px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 30%, transparent 70%)',
-            filter: 'blur(60px)',
-            opacity: lightIntensity,
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/2 -right-24 w-[500px] h-[500px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,250,240,0.12) 0%, rgba(255,250,240,0.06) 35%, transparent 70%)',
-            filter: 'blur(50px)',
-            opacity: lightIntensity,
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/3 -right-20 w-[450px] h-[450px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)',
-            filter: 'blur(55px)',
-            opacity: lightIntensity,
-          }}
-        />
-        
-        {/* Center ambient glow */}
+      {/* Premium Studio Lighting */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Main key lights - left side */}
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full"
+          className="absolute top-[15%] left-0 w-[800px] h-[800px] rounded-full opacity-50"
           style={{
-            background: 'radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 60%)',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.08) 50%, transparent 75%)',
+            filter: 'blur(90px)',
+            transform: 'translateX(-45%)',
+          }}
+        />
+        <div 
+          className="absolute top-[35%] left-0 w-[650px] h-[650px] rounded-full opacity-45"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,248,240,0.45) 0%, rgba(255,248,240,0.22) 30%, rgba(255,248,240,0.08) 55%, transparent 75%)',
+            filter: 'blur(85px)',
+            transform: 'translateX(-38%)',
+          }}
+        />
+        <div 
+          className="absolute top-[60%] left-0 w-[600px] h-[600px] rounded-full opacity-38"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.18) 35%, rgba(255,255,255,0.06) 60%, transparent 80%)',
             filter: 'blur(80px)',
+            transform: 'translateX(-32%)',
+          }}
+        />
+        
+        {/* Main key lights - right side */}
+        <div 
+          className="absolute top-[20%] right-0 w-[800px] h-[800px] rounded-full opacity-50"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.25) 25%, rgba(255,255,255,0.08) 50%, transparent 75%)',
+            filter: 'blur(90px)',
+            transform: 'translateX(45%)',
+          }}
+        />
+        <div 
+          className="absolute top-[40%] right-0 w-[650px] h-[650px] rounded-full opacity-45"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,248,240,0.45) 0%, rgba(255,248,240,0.22) 30%, rgba(255,248,240,0.08) 55%, transparent 75%)',
+            filter: 'blur(85px)',
+            transform: 'translateX(38%)',
+          }}
+        />
+        <div 
+          className="absolute top-[65%] right-0 w-[600px] h-[600px] rounded-full opacity-38"
+          style={{
+            background: 'radial-gradient(circle, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.18) 35%, rgba(255,255,255,0.06) 60%, transparent 80%)',
+            filter: 'blur(80px)',
+            transform: 'translateX(32%)',
+          }}
+        />
+        
+        {/* Light beams effect - diagonal from top corners */}
+        <div 
+          className="absolute -top-20 -left-20 w-[400px] h-[1200px] opacity-15"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 40%, transparent 70%)',
+            filter: 'blur(60px)',
+            transform: 'rotate(25deg)',
+          }}
+        />
+        <div 
+          className="absolute -top-20 -right-20 w-[400px] h-[1200px] opacity-15"
+          style={{
+            background: 'linear-gradient(225deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 40%, transparent 70%)',
+            filter: 'blur(60px)',
+            transform: 'rotate(-25deg)',
+          }}
+        />
+        
+        {/* Center fill light - soft ambient */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full opacity-25"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0.02) 70%, transparent 85%)',
+            filter: 'blur(120px)',
+          }}
+        />
+        
+        {/* Rim light - subtle edge definition */}
+        <div 
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] opacity-12"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, transparent 80%)',
+            filter: 'blur(70px)',
+          }}
+        />
+        
+        {/* Subtle floor reflection simulation */}
+        <div 
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1200px] h-[200px] opacity-8"
+          style={{
+            background: 'linear-gradient(to top, rgba(255,255,255,0.08) 0%, transparent 100%)',
+            filter: 'blur(50px)',
           }}
         />
       </div>
