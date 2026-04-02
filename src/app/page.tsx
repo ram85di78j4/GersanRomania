@@ -8,6 +8,8 @@ import EVCharging from '@/components/sections/EVCharging';
 import News from '@/components/sections/News';
 import Contact from '@/components/sections/Contact';
 
+export const revalidate = 60;
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black overflow-x-hidden">
