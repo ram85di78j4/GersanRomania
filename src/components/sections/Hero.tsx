@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, ChevronDown } from 'lucide-react';
 import { useRef } from 'react';
 import GlowText from '@/components/ui/GlowText';
+import SynapseCanvas from '@/components/ui/SynapseCanvas';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -13,101 +14,28 @@ export default function Hero() {
   });
 
   const contentOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.55], [0, 60]);
-
-  const lightSpread = useTransform(scrollYProgress, [0, 0.6], [1, 1.35]);
-  const lightOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0.55]);
+  const contentY      = useTransform(scrollYProgress, [0, 0.55], [0, 60]);
+  const canvasOpacity = useTransform(scrollYProgress, [0, 0.7],  [1, 0]);
 
   return (
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#080808]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]"
     >
-      {/* ── Architectural Spot Lighting ── */}
+      {/* ── Neural Synapse Network ── */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
-        style={{ opacity: lightOpacity }}
+        style={{ opacity: canvasOpacity }}
       >
-        {/* Left spot — warm white angled cone from upper-left edge */}
-        <motion.div
-          className="hero-breathe absolute"
-          style={{
-            top: '5%',
-            left: '-12%',
-            width: '75vw',
-            height: '85vh',
-            background:
-              'conic-gradient(from 15deg at 0% 20%, rgba(255,245,225,0.28) 0deg, rgba(255,240,210,0.14) 22deg, transparent 38deg)',
-            filter: 'blur(55px)',
-            transformOrigin: '0% 20%',
-            scale: lightSpread,
-          }}
-        />
-        {/* Left spot — secondary diffuse fill */}
-        <motion.div
-          className="hero-breathe-slow absolute left-0 top-[20%]"
-          style={{
-            width: '50vw',
-            height: '60vh',
-            background:
-              'radial-gradient(ellipse at 0% 50%, rgba(255,248,230,0.13) 0%, rgba(255,244,220,0.06) 45%, transparent 75%)',
-            filter: 'blur(80px)',
-            scale: lightSpread,
-            transformOrigin: '0% 50%',
-          }}
-        />
+        <SynapseCanvas />
 
-        {/* Right spot — warm white angled cone from upper-right edge */}
-        <motion.div
-          className="hero-breathe absolute"
-          style={{
-            top: '5%',
-            right: '-12%',
-            width: '75vw',
-            height: '85vh',
-            background:
-              'conic-gradient(from -35deg at 100% 20%, transparent 0deg, rgba(255,240,210,0.14) 16deg, rgba(255,245,225,0.28) 38deg, transparent 54deg)',
-            filter: 'blur(55px)',
-            transformOrigin: '100% 20%',
-            scale: lightSpread,
-          }}
-        />
-        {/* Right spot — secondary diffuse fill */}
-        <motion.div
-          className="hero-breathe-slow absolute right-0 top-[20%]"
-          style={{
-            width: '50vw',
-            height: '60vh',
-            background:
-              'radial-gradient(ellipse at 100% 50%, rgba(255,248,230,0.13) 0%, rgba(255,244,220,0.06) 45%, transparent 75%)',
-            filter: 'blur(80px)',
-            scale: lightSpread,
-            transformOrigin: '100% 50%',
-          }}
-        />
-
-        {/* Center ambient — barely-there fill so text area isn't pitch black */}
+        {/* Radial vignette so edges stay dark and text stays readable */}
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%]"
+          className="absolute inset-0"
           style={{
-            width: '60vw',
-            height: '50vh',
             background:
-              'radial-gradient(ellipse at 50% 50%, rgba(255,248,230,0.045) 0%, rgba(255,248,230,0.02) 55%, transparent 80%)',
-            filter: 'blur(100px)',
-          }}
-        />
-
-        {/* Hairline floor glow */}
-        <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2"
-          style={{
-            width: '80vw',
-            height: '18vh',
-            background:
-              'linear-gradient(to top, rgba(255,245,220,0.05) 0%, transparent 100%)',
-            filter: 'blur(40px)',
+              'radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, rgba(5,5,5,0.55) 70%, rgba(5,5,5,0.92) 100%)',
           }}
         />
       </motion.div>
@@ -145,7 +73,7 @@ export default function Hero() {
             transition={{ duration: 1.1, delay: 0.18, ease: 'easeOut' }}
             className="text-[2.6rem] sm:text-5xl md:text-[3.6rem] lg:text-[4.2rem] font-black mb-6 sm:mb-7 leading-[1.08] tracking-tight"
           >
-            <span className="block text-white/95 mb-2">
+            <span className="block text-white mb-2">
               Iluminat Inteligent
             </span>
             <span className="block">
