@@ -17,7 +17,7 @@ export const placeholderProjects: Project[] = [
     year: '2024',
     description: 'Sistem complet de iluminat LED inteligent pentru centrul comercial AFI Palace, incluzând zone comune, magazine și parcare.',
     image: {
-      url: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800',
+      url: '/images/project-commercial-lighting.svg',
       alt: 'AFI Palace commercial lighting',
     },
     technologies: ['LED RGB', 'DMX Control', 'Smart Sensors', 'Energy Management'],
@@ -42,7 +42,7 @@ export const placeholderProjects: Project[] = [
     year: '2024',
     description: 'Implementare rețea de stații de încărcare rapidă pentru vehicule electrice în parcările Kaufland din toată țara.',
     image: {
-      url: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800',
+      url: '/images/project-ev-charging.svg',
       alt: 'Kaufland EV charging stations',
     },
     technologies: ['DC Fast Charging', 'Smart Grid', 'Mobile App', 'Payment Integration'],
@@ -67,7 +67,7 @@ export const placeholderProjects: Project[] = [
     year: '2023',
     description: 'Sistem complet de automatizare pentru complex rezidențial de lux, incluzând iluminat, climatizare și securitate.',
     image: {
-      url: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
+      url: '/images/project-smart-home.svg',
       alt: 'Primaverii smart home',
     },
     technologies: ['KNX System', 'Voice Control', 'Mobile App', 'AI Learning'],
@@ -92,7 +92,7 @@ export const placeholderProjects: Project[] = [
     year: '2023',
     description: 'Modernizare completă a sistemului de iluminat industrial cu LED de înaltă eficiență și control inteligent.',
     image: {
-      url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800',
+      url: '/images/project-industrial-lighting.svg',
       alt: 'Dacia factory industrial lighting',
     },
     technologies: ['High-Bay LED', 'DALI Control', 'Daylight Harvesting', 'Emergency Lighting'],
@@ -117,7 +117,7 @@ export const placeholderProjects: Project[] = [
     year: '2023',
     description: 'Design și implementare iluminat arhitectural premium pentru hotel de 5 stele, incluzând fațadă și spații interioare.',
     image: {
-      url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
+      url: '/images/project-hotel-lighting.svg',
       alt: 'Marriott hotel architectural lighting',
     },
     technologies: ['RGB LED', 'DMX Control', 'Architectural Fixtures', 'Scene Programming'],
@@ -142,7 +142,7 @@ export const placeholderProjects: Project[] = [
     year: '2024',
     description: 'Soluție completă de management și încărcare pentru flota de vehicule electrice Glovo, incluzând software și hardware.',
     image: {
-      url: 'https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=800',
+      url: '/images/project-ev-fleet.svg',
       alt: 'Glovo EV fleet charging',
     },
     technologies: ['Fleet Management', 'Smart Charging', 'Route Optimization', 'Analytics'],

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#111820"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <radialGradient id="beam1" cx="20%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="rgba(220,230,255,0.2)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="beam2" cx="50%" cy="0%" r="55%">
+      <stop offset="0%" stop-color="rgba(220,230,255,0.18)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="beam3" cx="80%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="rgba(220,230,255,0.2)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#beam1)"/>
+  <rect width="800" height="500" fill="url(#beam2)"/>
+  <rect width="800" height="500" fill="url(#beam3)"/>
+  <!-- Ceiling structure -->
+  <rect x="0" y="40" width="800" height="20" fill="rgba(255,255,255,0.05)"/>
+  <!-- High-bay fixtures -->
+  <rect x="100" y="40" width="60" height="20" rx="4" fill="rgba(220,230,255,0.2)" stroke="rgba(220,230,255,0.4)" stroke-width="1"/>
+  <rect x="112" y="60" width="36" height="8" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <rect x="370" y="40" width="60" height="20" rx="4" fill="rgba(220,230,255,0.2)" stroke="rgba(220,230,255,0.4)" stroke-width="1"/>
+  <rect x="382" y="60" width="36" height="8" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <rect x="640" y="40" width="60" height="20" rx="4" fill="rgba(220,230,255,0.2)" stroke="rgba(220,230,255,0.4)" stroke-width="1"/>
+  <rect x="652" y="60" width="36" height="8" rx="2" fill="rgba(255,255,255,0.7)"/>
+  <!-- Factory floor structures -->
+  <rect x="60" y="300" width="150" height="120" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="320" y="260" width="160" height="160" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="590" y="290" width="140" height="130" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- Floor line -->
+  <rect x="0" y="420" width="800" height="2" fill="rgba(255,255,255,0.06)"/>
+  <!-- Safety lines on floor -->
+  <rect x="0" y="420" width="800" height="80" fill="rgba(0,0,0,0.3)"/>
+  <line x1="60" y1="422" x2="60" y2="500" stroke="rgba(255,180,0,0.3)" stroke-width="2"/>
+  <line x1="740" y1="422" x2="740" y2="500" stroke="rgba(255,180,0,0.3)" stroke-width="2"/>
+  <!-- Label -->
+  <text x="400" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="rgba(220,230,255,0.7)" letter-spacing="3">ILUMINAT INDUSTRIAL HIGH-BAY</text>
+  <text x="400" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" letter-spacing="2">GERSAN ROMANIA</text>
+</svg>

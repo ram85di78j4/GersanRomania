@@ -13,7 +13,7 @@ export const placeholderArticles: Article[] = [
     },
     excerpt: 'Descoperă cum tehnologia LED revoluționează designul și eficiența energetică în spațiile comerciale moderne.',
     image: {
-      url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800',
+      url: '/images/article-led-commercial.svg',
       alt: 'Modern LED commercial lighting',
     },
     category: {
@@ -37,7 +37,7 @@ export const placeholderArticles: Article[] = [
     },
     excerpt: 'Tot ce trebuie să știi despre instalarea și configurarea stațiilor de încărcare pentru vehicule electrice.',
     image: {
-      url: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800',
+      url: '/images/article-ev-charging.svg',
       alt: 'EV charging station installation',
     },
     category: {
@@ -61,7 +61,7 @@ export const placeholderArticles: Article[] = [
     },
     excerpt: 'Explorează cele mai noi tehnologii de automatizare pentru case inteligente și beneficiile lor.',
     image: {
-      url: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
+      url: '/images/article-smart-home.svg',
       alt: 'Smart home automation',
     },
     category: {
@@ -85,7 +85,7 @@ export const placeholderArticles: Article[] = [
     },
     excerpt: 'Studiu de caz: Cum companiile reduc costurile energetice prin trecerea la iluminat LED inteligent.',
     image: {
-      url: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800',
+      url: '/images/article-energy-efficiency.svg',
       alt: 'Energy efficient LED lighting',
     },
     category: {

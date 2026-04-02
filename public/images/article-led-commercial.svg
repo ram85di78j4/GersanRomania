@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#141008"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <radialGradient id="spotL" cx="25%" cy="0%" r="55%">
+      <stop offset="0%" stop-color="rgba(255,220,100,0.22)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="spotR" cx="75%" cy="0%" r="55%">
+      <stop offset="0%" stop-color="rgba(255,220,100,0.18)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#spotL)"/>
+  <rect width="800" height="500" fill="url(#spotR)"/>
+  <!-- Ceiling track -->
+  <rect x="0" y="50" width="800" height="8" fill="rgba(255,255,255,0.06)"/>
+  <!-- Track lights -->
+  <rect x="150" y="30" width="8" height="28" fill="rgba(255,255,255,0.15)"/>
+  <rect x="144" y="56" width="20" height="10" rx="3" fill="rgba(255,220,100,0.5)"/>
+  <rect x="380" y="30" width="8" height="28" fill="rgba(255,255,255,0.15)"/>
+  <rect x="374" y="56" width="20" height="10" rx="3" fill="rgba(255,220,100,0.5)"/>
+  <rect x="610" y="30" width="8" height="28" fill="rgba(255,255,255,0.15)"/>
+  <rect x="604" y="56" width="20" height="10" rx="3" fill="rgba(255,220,100,0.5)"/>
+  <!-- Display shelves -->
+  <rect x="80" y="200" width="180" height="8" fill="rgba(255,255,255,0.12)"/>
+  <rect x="80" y="280" width="180" height="8" fill="rgba(255,255,255,0.09)"/>
+  <rect x="80" y="360" width="180" height="8" fill="rgba(255,255,255,0.07)"/>
+  <!-- Product blocks on shelves -->
+  <rect x="95" y="168" width="35" height="30" rx="2" fill="rgba(255,220,100,0.12)"/>
+  <rect x="140" y="172" width="30" height="26" rx="2" fill="rgba(255,220,100,0.10)"/>
+  <rect x="180" y="165" width="40" height="33" rx="2" fill="rgba(255,220,100,0.14)"/>
+  <rect x="95" y="248" width="35" height="30" rx="2" fill="rgba(255,220,100,0.10)"/>
+  <rect x="140" y="252" width="30" height="26" rx="2" fill="rgba(255,220,100,0.08)"/>
+  <rect x="180" y="246" width="40" height="32" rx="2" fill="rgba(255,220,100,0.12)"/>
+  <!-- Right side shelves -->
+  <rect x="540" y="200" width="180" height="8" fill="rgba(255,255,255,0.12)"/>
+  <rect x="540" y="280" width="180" height="8" fill="rgba(255,255,255,0.09)"/>
+  <rect x="540" y="360" width="180" height="8" fill="rgba(255,255,255,0.07)"/>
+  <rect x="555" y="168" width="35" height="30" rx="2" fill="rgba(255,220,100,0.12)"/>
+  <rect x="600" y="172" width="30" height="26" rx="2" fill="rgba(255,220,100,0.10)"/>
+  <rect x="640" y="165" width="40" height="33" rx="2" fill="rgba(255,220,100,0.14)"/>
+  <!-- Center feature area -->
+  <rect x="300" y="150" width="200" height="260" fill="rgba(20,15,5,0.5)" stroke="rgba(255,220,100,0.15)" stroke-width="1"/>
+  <text x="400" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,220,100,0.6)" letter-spacing="2">EFICIENȚĂ</text>
+  <text x="400" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="rgba(255,255,255,0.9)">-60%</text>
+  <text x="400" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,220,100,0.5)" letter-spacing="1">consum energie</text>
+  <!-- Floor -->
+  <rect x="0" y="420" width="800" height="80" fill="rgba(0,0,0,0.4)"/>
+  <rect x="0" y="419" width="800" height="2" fill="rgba(255,220,100,0.1)"/>
+  <!-- Label -->
+  <text x="400" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="rgba(255,220,100,0.7)" letter-spacing="3">ILUMINAT LED COMERCIAL</text>
+  <text x="400" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" letter-spacing="2">GERSAN ROMANIA</text>
+</svg>
